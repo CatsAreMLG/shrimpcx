@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background-color: #EFA3E7;
+            overflow: hidden;
+        }
+        video {
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        @media screen and (max-width: 1666px) {
+            video {
+                width: 100vw;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <video id="ocScreencapVideo" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"
+                preload="metadata" data-aos="fade-up">
+                <source src="./shrimp.mp4" type="video/mp4">
+            </video>
+        </div>
+        <script>
+            var autoPlayVideo = document.getElementById("ocScreencapVideo");
+            autoPlayVideo.oncanplaythrough = function () {
+                autoPlayVideo.muted = false;
+                autoPlayVideo.play();
+                autoPlayVideo.pause();
+                autoPlayVideo.play();
+            }
+
+            if (!autoPlayVideo.playing) {
+                autoPlayVideo.controls = "controls";
+            }
+            console.log("%c🦐🦐🦐", "display: block; margin: 0 55px; padding: 20px 20px; color:#EFA3E7; font-family: sans-serif; font-size: 40px; text-align:center; background: #3498DB;");
+            console.log("%cgithub: catsaremlg", "color:#EFA3E7; font-family: sans-serif; font-size: 40px; text-align:center;");
+        </script>
+    </body>
+</html>
